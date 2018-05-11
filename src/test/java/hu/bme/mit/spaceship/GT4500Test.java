@@ -7,12 +7,13 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class GT4500Test {
-
+  private DataAccess mockDA;
   private GT4500 ship;
 
   @Before
   public void init(){
-    this.ship = new GT4500();
+    mockDA = mock(DataAccess.class);
+    this.ship = new GT4500(mockDA);
   }
 
   @Test
